@@ -1,7 +1,7 @@
 # Setup
-BEFORE COMMITTING README Test with older versions of python 
+
 ## Requirements
-- Python 3.8 or newer
+- Python 3.7 or newer
 - pip3 (should already be installed if you have Python 3.4 or newer)
 - venv (should already be installed if you have Python 3.3 or newer)
 - curl (optional)
