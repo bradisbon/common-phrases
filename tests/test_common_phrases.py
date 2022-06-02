@@ -38,3 +38,11 @@ def test_find_common_convert_newlines():
 
     assert r.status_code == 200
     assert r.json().get('most_common') == ['a b c', 'b c a', 'c a b']
+
+
+def test_find_common_no_empty_words():
+    data = {'text': 'a b c a\n\n\n\nb c'}
+    r = client.post('/find_common', data=json.dumps(data))
+
+    assert r.status_code == 200
+    assert r.json().get('most_common') == ['a b c', 'b c a', 'c a b']

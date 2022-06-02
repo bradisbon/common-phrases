@@ -24,7 +24,7 @@ def clean(text: str) -> List[str]:
     no_punc = re.sub(r"[^a-z ]+", '', no_newlines, flags=re.I)
     lower = no_punc.lower()
 
-    return lower.split(' ')
+    return [word for word in lower.split(' ') if re.match(r'[a-z]',word)]
 
 
 @api.post('/find_common', response_model=MostCommon)
